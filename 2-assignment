@@ -1,0 +1,75 @@
+1-task
+n1 = int(input('First number: '))
+operation = str(input('Operation: '))
+n2 = int(input('Second number: '))
+if operation == "+":
+    print(n1 + n2)
+elif operation == "-":
+    print(n1 - n2)
+elif operation == "*":
+    print(n1 * n2)
+elif operation == "/":
+    print(n1 / n2)
+    
+2-task
+ n1 = int(input('First number: '))
+operation = str(input('Operation: '))
+n2 = int(input('Second number: '))
+if n2 == 0 and operation == "/":
+    print('Impossible')
+elif operation == "+":
+    print(n1 + n2)
+elif operation == "-":
+    print(n1 - n2)
+elif operation == "*":
+    print(n1 * n2)
+elif n2 != 0 and operation == "/":
+    print(n1 / n2)
+    
+3-task    
+def check(n):
+    if n > 10:
+        while n != 12 and n <= 15 or n == 18:
+            return True
+    else:
+        return False
+
+
+a = 14
+print(check(a))
+
+4-task
+n = 34
+while n < 66:
+    n += 2
+    print(n)
+    
+5-task
+number = "458"
+counter = 0
+
+print('*** You have only 3 tries to guess the number ***')
+
+while True:
+    numb = input("guess the numb: ").lower()
+    counter = counter + 1
+    if numb == number:
+        break
+    if numb != number and counter > 2:
+        break
+
+6-task
+for n in range(1, 101):
+    if n == 50 or n == 99:
+        continue
+    print(n)
+    n += 1
+    
+7-task
+word = input("enter the word:\n")
+number = int(input("enter the number:\n"))
+
+for x in word:
+    for n in range(0, number):
+        print(x, end="")
+    print()
