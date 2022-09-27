@@ -1,0 +1,101 @@
+1-task
+import re
+
+text = input("enter your text in russian:\n")
+
+list = re.findall("е", text)
+
+print(len(list))
+
+2-task
+text = input("enter the text:")
+
+x = text.replace(':', '%')
+
+print(x)
+print(len(x))
+
+4-task
+i = 0
+n = 0
+text = input('enter your text:\n')
+for i in range(len(text)):
+    if text[i] == 'a':
+        n += 1
+print(text.replace('a', 'o'))
+print(n)
+print(len(text))
+
+5-task
+s = input("enter the text with Caps Lock:\n")
+print(s.lower())
+
+6-task
+i = 0
+n = 0
+s = input('enter your text:\n')
+for i in range(len(s)):
+    if s[i] == 'a':
+        n += 1
+print(s.replace('a', ''))
+print(n)
+
+7-task
+s = input('enter your text:\n')
+s1 = s[:len(s)//2]
+s2 = s[len(s)//2:]
+print (s1.replace('n', '*') + s2)
+
+8-task
+i = 0
+n = 1
+s = input('enter your text:\n')
+for i in range(len(s)):
+    if s[i] == ' ':
+        n += 1
+    if s[i] == '.':
+        break
+print(n)
+
+9-task
+text = input('enter your text:\n')
+word = input('enter your word:\n')
+print(text.count(word))
+
+10-task
+s = input('enter your text:\n')
+print(s.title())
+
+11-task
+import re
+text = input('enter your text:\n')
+n = re.findall('[Nn]+', text)
+n_len = map(len,n)
+print(max(n_len))
+print(text.replace('!', '.'))
+
+12-task
+s = input('enter your text:\n')
+for word in s.split():
+    if word.endswith("l"):
+        print(word)
+        
+13-task
+s = input('enter your text:\n')
+left = s.find('(')
+right = s.find(')')
+print(s[left + 1:right])
+
+14-task
+text = input('enter your text:\n')
+for word in text.split():
+    if word.startswith("a") or word.endswith("i"):
+        print(word)
+        
+15-task
+n = 0
+s = input('enter your text:\n')
+for i in range(len(s)):
+    if s[i] == 't':
+        n += 1
+print(n)
