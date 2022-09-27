@@ -1,0 +1,182 @@
+4.2
+def isInside(x, y, rad, p1, p2):
+    if ((p1 - x) * (p1 - x) +
+            (p2 - y) * (p2 - y) <= rad * rad):
+        return True
+    else:
+        return False
+p1 = 11
+p2 = 12
+x = 0
+y = 1
+rad = 2
+if isInside(x, y, rad, p1, p2):
+    print("Inside")
+else:
+    print("Outside")
+    
+9.1
+def getSum(n):
+    sum = 0
+    for digit in str(n):
+        sum += int(digit)
+    return sum
+
+
+def sumComb(n, sum):
+    repeat = -1
+    while n >= 0:
+        n -= sum
+        repeat += 1
+    return repeat
+
+
+n = int(input("enter the number: "))
+sum = getSum(n)
+print(sum)
+print(sumComb(n, sum))
+
+9.2
+import statistics
+
+def multiplyList(myList):
+
+	result = 1
+	for x in myList:
+		result = result * x
+	return result
+
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = [7, 8, 9]
+
+print("The product of the elements in 1 list =", multiplyList(list1))
+print("The product of the elements in 2 list =", multiplyList(list2))
+print("The product of the elements in 3 list =", multiplyList(list3))
+
+print("The arithmetic mean of 1 list =", statistics.mean(list1))
+print("The arithmetic mean of 2 list =", statistics.mean(list2))
+print("The arithmetic mean of 3 list =", statistics.mean(list3))
+
+10.1
+interval = []
+for i in range(210, 231):
+    interval.append(i)
+
+res = [sub for sub in interval if len(set(str(sub))) == len(str(sub))]
+
+print(str(res))
+
+10.2
+string = "I am a student"
+s = string.split()[::-1]
+word = []
+for i in s:
+    word.append(i)
+print(" ".join(word))
+
+11.1
+def isPrime(n):
+
+    if n <= 1:
+        return False
+
+    for i in range(3, n):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+def printPrime(n):
+    for i in range(n, n * 2):
+        if isPrime(i):
+            print(i, end=" ")
+
+
+if __name__ == "__main__":
+    n = 40
+    printPrime(n)
+    
+11.2
+list1 = [10, 250, 20, 4, 100, 45, 99]
+
+print(list1)
+print("maximum of 1st list:", max(list1))
+
+list2 = [15, 86, 54, 320, 112, 55, 74]
+
+print(list2)
+print("maximum of 2nd list:", max(list2))
+
+index1 = list1.index(max(list1))
+index2 = list1.index(max(list2))
+
+list1[index1], list2[index2] = list2[index2], list1[index1]
+
+print(list1, list2)
+
+13.1
+for num in range(1, 1000):
+
+    order = len(str(num))
+
+    sum = 0
+
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+
+    if num == sum:
+        print(num)
+        
+14.1
+def countdividors(a):
+    res = []
+    i = 1
+    while i * i < a + 1:
+        if a % i == 0:
+            res.append(i)
+            if i != a // i:
+                res.append(a // i)
+        i += 1
+    return sorted(res)
+
+
+def fun(m, n):
+    div = []
+    for num in range(m, n + 1):
+        frac = countdividors(num)
+        div.append((len(frac), -num, frac[-2:]))
+    div.sort()
+    print(-div[-1][1], 'consist', div[-1][0], 'divisors')
+
+
+fun(394441, 394505)
+
+15.1
+n = 1000
+
+array = [True for _ in range(n + 1)]
+
+i = 1
+while 2 * i * (i + 1) < n:
+    j = i
+    while j <= (n - i) / (2 * i + 1):
+        array[2 * i * j + i + j] = False
+        j = j + 1
+    i = i + 1
+
+for i in range(1, n + 1):
+    elem = array[i]
+    if elem:
+        prime = 2 * i + 1
+        if prime > n: break
+        a = bin(prime)[2:]
+        b = bin(prime)[2:][::-1]
+
+        if a == b:
+            print(prime, end=' ')
