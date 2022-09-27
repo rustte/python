@@ -1,0 +1,412 @@
+1.1
+a = input("enter your array:\n")
+arr = a.split()
+size = len(arr)
+
+maximum = arr[0]
+for i in range(1, size):
+    if arr[i] > maximum:
+        maximum = arr[i]
+
+arr.reverse()
+print("reversed array:", arr)
+print("maximum element:", maximum)
+
+1.2
+import statistics
+
+a = input('enter your array:\n')
+arr = list(map(int, a.split()))
+
+mean = statistics.mean(arr)
+
+for i in range(len(arr)):
+    if arr[i] == 0:
+        arr[i] = mean
+print('Changed array:', arr)
+
+2.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+minimum = 10000
+for i in range(len(arr)):
+    if arr[i] < minimum:
+        minimum = arr[i]
+        n = i
+
+print('minimum element:', minimum)
+print('index of the minimum element:', n)
+
+2.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+pos = []
+neg = []
+for i in range(len(arr)):
+    if arr[i] > 0:
+        pos.append(arr[i])
+    else:
+        neg.append(arr[i])
+
+print('positive elements:', pos)
+print('other elements:', neg)
+
+3.1
+import itertools
+
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+sum_odd = sum(itertools.islice(arr, 0, len(arr), 2))
+print('entered array:\n', arr)
+print('the sum of elements with odd indices:\n', sum_odd)
+
+3.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+for i in range(len(arr)):
+    if arr[i] < 15:
+        arr[i] = arr[i] * 2
+print('changed array:', arr)
+
+4.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+maximum = 0
+for i in range(len(arr)):
+    if arr[i] > maximum:
+        maximum = arr[i]
+        n = i
+
+print('maximum element:', maximum)
+print('index of the maximum element:', n)
+
+4.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+oddnumbers = []
+for i in range(len(arr)):
+    if arr[i] % 2 != 0:
+        oddnumbers.append(arr[i])
+
+for i in range(len(oddnumbers)):
+    j = i + 1
+    for j in range(len(oddnumbers)):
+        if oddnumbers[i] < oddnumbers[j]:
+            x = oddnumbers[i]
+            oddnumbers[i] = oddnumbers[j]
+            oddnumbers[j] = x
+
+oddnumbers.reverse()
+if not bool(oddnumbers):
+    print('there are no odd elements')
+else:
+    print('sorted array with odd elements:', oddnumbers)
+    
+5.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] == arr[j]:
+            if arr[i] < 0 and arr[j] < 0:
+                print(arr[i], arr[j])
+                
+5.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+arr = list(dict.fromkeys(arr))
+print(arr)
+
+6.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+arr.sort()
+print('maximum element in array:', arr[len(arr) - 1])
+
+arr.sort(reverse=True)
+print('minimum element in array:', arr[len(arr) - 1])
+
+6.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+result = 0
+for i in range(len(arr)):
+    if arr[i] > 5:
+        result += arr[i]
+
+print('The sum of numbers that grater than 5:', result)
+
+7.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+sum_even = 0
+product_odd = 1
+for i in range(len(arr)):
+    if arr[i] % 2 == 0:
+        sum_even += arr[i]
+    if arr[i] % 2 != 0:
+        product_odd *= arr[i]
+
+print('sum of even numbers:', sum_even)
+print('product of odd numbers:', product_odd)
+
+7.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+max = arr[0]
+mxindex = 0
+for i in range(len(arr)):
+    if arr[i] > max:
+        max = arr[i]
+        mxindex = i
+
+min = arr[0]
+mnindex = 0
+for j in range(len(arr)):
+    if arr[j] < min:
+        min = arr[j]
+        mnindex = j
+
+print('the max value:', max)
+print('the min value:', min)
+arr[mnindex] = max
+arr[mxindex] = min
+print('swapped array:', arr)
+
+8.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+sum = 1
+for i in arr:
+    sum = sum + i
+
+print("sum of elements:", sum)
+
+product = 1
+for i in arr:
+    product = product * i
+
+print("product of elements:", product)
+
+8.2
+import statistics
+
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+mean = statistics.mean(arr)
+
+for i in range(len(arr)):
+    if arr[i] == 0:
+        arr[i] = mean
+print('changed array:', arr)
+
+9.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+min = abs(arr[0])
+minID = 0
+for i in range(len(arr)):
+    if abs(arr[i]) <= min:
+        min = abs(arr[i])
+        minID = i
+print('absolute minimum element in array:', arr[minID])
+arr.reverse()
+print('reversed array: ', arr)
+
+9.2
+s1 = input('enter the first array: ')
+arr1 = list(map(int, s1.split()))
+a2 = input('enter the second array: ')
+arr2 = list(map(int, a2.split()))
+
+arr2, arr1 = arr1, arr2
+print('first array:', arr2)
+print('second array:', arr1)
+
+10.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+check = True
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] == arr[j]:
+            check = False
+            print('duplicate element:', arr[i])
+
+if check is True:
+    print('no duplicate elements')
+    
+10.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+for i in range(len(arr)):
+    if arr[i] < 10:
+        arr[i] = 0
+    elif arr[i] > 20:
+        arr[i] = 1
+print('changed array:', arr)
+
+11.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+max_even = -2147483648
+for i in range(len(arr)):
+    if arr[i] % 2 == 0:
+        if arr[i] > max_even:
+            max_even = arr[i]
+
+print('Maximum even element:', max_even)
+
+11.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+arr2 = []
+for i in range(len(arr)):
+    if arr[i] % 2 == 0:
+        if arr[i] < 10:
+            arr2.append(arr[i])
+if not bool(arr2):
+    print('there are no even numbers of the original array less than 10')
+else:
+    print('even numbers of the original array less than 10:', arr2)
+    
+12.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+min_odd = 10000
+for i in range(len(arr)):
+    if arr[i] % 2 != 0:
+        if arr[i] < min_odd:
+            min_odd = arr[i]
+
+print('minimum odd element:', min_odd)
+
+12.2
+a1 = input('enter the first array: ')
+arr1 = list(map(int, a1.split()))
+a2 = input('enter the second array: ')
+arr2 = list(map(int, a2.split()))
+
+arr2, arr1 = arr1, arr2
+print('first array:', arr2)
+print('second array:', arr1)
+
+13.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+check = True
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] == arr[j]:
+            check = False
+            print('duplicate elements:', arr[i])
+            print('indices of duplicate element:', i, 'and', j)
+
+if check is True:
+    print('no dulicate elements')
+    
+13.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+for i in range(len(arr)):
+    if arr[i] < 15:
+        arr[i] *= 2
+
+print('changed array:', arr)
+
+14.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+max = arr[0]
+mxindex = 0
+for i in range(len(arr)):
+    if arr[i] > max:
+        max = arr[i]
+        mxindex = i
+
+min = arr[0]
+mnindex = 0
+for j in range(len(arr)):
+    if arr[j] < min:
+        min = arr[j]
+        mnindex = j
+
+print('the maximum value:', max)
+print('the minimum value:', min)
+arr[mnindex] = max
+arr[mxindex] = min
+print('swapped array:', arr)
+
+14.2
+import statistics
+
+
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+mean = statistics.mean(arr)
+
+for i in range(len(arr)):
+    if arr[i] > mean:
+        arr[i] = 1
+print('changed array:', arr)
+
+15.1
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+check = True
+for i in range(len(arr)):
+    for j in range(i+1, len(arr)):
+        if arr[i] == arr[j]:
+            check = False
+            print('duplicate element:', arr[i])
+
+if check is True:
+    print('no duplicate elements')
+    
+15.2
+a = input("enter your array:\n")
+arr = list(map(int, a.split()))
+
+oddnumbers = []
+for i in range(len(arr)):
+    if arr[i] % 2 != 0:
+        oddnumbers.append(arr[i])
+
+for i in range(len(oddnumbers)):
+    j = i + 1
+    for j in range(len(oddnumbers)):
+        if oddnumbers[i] < oddnumbers[j]:
+            temp = oddnumbers[i]
+            oddnumbers[i] = oddnumbers[j]
+            oddnumbers[j] = temp
+
+oddnumbers.reverse()
+if not bool(oddnumbers):
+    print('there are no odd elements')
+else:
+    print('sorted array with odd elements:', oddnumbers)
