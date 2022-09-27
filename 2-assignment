@@ -1,3 +1,4 @@
+2-practice
 1-task
 n1 = int(input('First number: '))
 operation = str(input('Operation: '))
