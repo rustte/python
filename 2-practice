@@ -1,0 +1,157 @@
+1-part
+
+1-task
+import math
+a = int(input("Value of a: \n"))
+b = int(input("Value of b: \n"))
+h = int(input("Value of h: \n"))
+S = ((math.sqrt(a) + b) * h) / (2*(a-b) + 4)
+print("Answer: S = " + format(S))
+
+2-task
+import math
+
+x = int(input("Value of x: \n"))
+y = int(input("Value of y: \n"))
+
+H = math.sqrt(math.cos(2 * y) + math.sin(4 * y) + math.sqrt(math.exp(x) + math.exp(-x))) / math.pow((math.exp(x) + math.exp(-x)), 3) * math.pow((math.sin(4 * y) + math.cos(2 * y) - 2), 2)
+
+print('H = ', H)
+
+3-task
+import math
+x = 2
+y = 1
+A = math.pow(math.pow(x, y), x) + math.pow(x, math.pow(x, y)) - math.pow(x, 4)
+print("Answer is: " + format(A))
+
+4-task
+import math
+x = 1
+y = 4
+z = 3
+A = math.pow(4, x * y) - math.pow(x, y * z) + math.pow(x * y, z)
+print("Answer is: " + format(A))
+
+5-task
+import math
+x = 3
+y = 0.2
+A = (5 * x * y / math.pow(x, 3) - 4) + math.exp(math.pow(x, 2)) + math.sqrt(math.pow(math.cos(y), 2)) - math.pow(y, 2)
+print("Answer is: " + format(A))
+
+6-task
+import math
+x = 3
+y = 5
+A = (math.sqrt(math.fabs(y))) + (math.pow(math.atan(math.log1p(x)), 3)) / (math.pow(x, y) - y + 1)
+print("Answer is: " + format(A))
+
+7-task
+import math
+x = 3
+y = 5
+A = (math.sqrt(math.fabs(y))) + (math.pow(math.atan(math.log1p(x)), 3)) / (math.pow(x, y) - y + 1)
+print("Answer is: " + format(A))
+
+8-task
+import math
+x = 2
+y = 2
+z = 1
+A = (4 * math.fabs(x) - math.pow(x * y * z, 2)) / (x + math.exp(y * x) - 2 * y * z)
+print("Answer is: " + format(A))
+
+9-task
+import math
+x = 0.8
+y = 0.1
+z = 4
+A = math.pow((1 - x + (math.pi/2-math.atan(x - (7 * y)))) / (4 * x * z) - math.pow(math.log1p(y), 2), (1 / 5))
+print("Answer is: " + format(A))
+
+10-task
+import math
+x = 3
+y = 1
+z = 3
+A = (2 * 3 * 4) / (math.pow(math.sin(x), 3) + math.pow(math.tan(y), 3) - math.sqrt(math.pow(z, x -y)))
+print("Answer is: " + format(A))
+
+11-task
+import math
+x = 4
+A = math.log1p(math.pow(x - 3, 4)) + math.pow(2, x) * math.pow(math.sin(3 * x), 2)
+print("Answer is: " + format(A))
+
+12-task
+import math
+x = 2
+y = 2
+z = 1
+A = math.sqrt(0.6 * x * y * z) + math.pow(math.pow(y, x), 2) - math.exp(math.pow(2 * math.sin(x) * math.cos(x), 2))
+print("Answer is: " + format(A))
+
+13-task
+import math
+
+x = 0.5
+y = 2
+A = math.asin(math.pow(x, 3.)) - 6 / (8 * (math.cos(4 * y) - math.sin(4 * x)))
+print("Answer is: " + format(A))
+
+14-task
+import math
+x = 2
+y = 1
+z = 3
+A = math.pow(math.log1p(x), 3) + math.exp(2 * x) / (x + 3.4) - 1/math.tan(3 / x * y * z)
+print("Answer is: " + format(A))
+
+2-part
+import math
+a = int(input("Value of a:"))
+b = int(input("Value of b:"))
+c = math.sqrt(math.pow(a, 2) + math.pow(b, 2))
+P = a + b + c
+S = (a * b) / 2
+print("Perimeter is equal to:" + format(P))
+print("Area is equal to:" + format(S))
+
+3-part
+import math
+a = float(input('Value of a: '))
+b = float(input('Value of b: '))
+c = float(input('Value of c: '))
+d = (b ** 2) - (4 * a * c)
+if d > 0:
+    print("The solutions are:")
+    print((-b + math.sqrt(d)) / (2 * a))
+    print((-b - math.sqrt(d)) / (2 * a))
+elif d == 0:
+    print("The solution is:")
+    print(-b / (2 * a))
+else:
+    print("No roots")
+    
+4-part
+import math
+print("Choose your figure:")
+print("1: Circle")
+print("2: Rectangle ")
+print("3: Triangle ")
+figure = int(input(""))
+if figure == 1:
+    radius = float(input("Enter the radius of the Circle: "))
+    area = math.pi * pow(radius, 2)
+    print("The area is :" + format(area))
+if figure == 2:
+    width = float(input("Enter the width of the rectangle: "))
+    length = float(input("Enter the length of the rectangle: "))
+    area = width * length
+    print("The area is :" + format(area))
+if figure == 3:
+    a, b, c = map(float, input("Enter the 3 sides of triangle:").split())
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    print("The area is :" + format(area))
